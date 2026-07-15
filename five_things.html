@@ -1,37 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ห้าคุ้ม</title>
-    <style>
-        .gallery {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(3, 180px);
-  gap: 10px;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ห้าคุ้ม</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f5f5f5;
+    }
 
-.gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
+    .circle {
+      position: relative;
+      width: 400px;
+      height: 400px;
+    }
 
-.big {
-  grid-row: 1 / span 2;
-}
-    </style>
+    .img {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      top: 50%;
+      left: 50%;
+      margin: -40px;
+      /* Half of image size */
+    }
+
+    /* Enlarged image */
+    .img.expanded {
+      transform: translate(-50%, -50%) scale(3);
+      top: 50%;
+      left: 50%;
+      z-index: 100;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .img.expanded+.caption {
+      display: block;
+    }
+
+    /* Position each image */
+    .img1 {
+      transform: rotate(0deg) translate(150px) rotate(0deg);
+    }
+
+    .img2 {
+      transform: rotate(72deg) translate(150px) rotate(-72deg);
+    }
+
+    .img3 {
+      transform: rotate(144deg) translate(150px) rotate(-144deg);
+    }
+
+    .img4 {
+      transform: rotate(216deg) translate(150px) rotate(-216deg);
+    }
+
+    .img5 {
+      transform: rotate(288deg) translate(150px) rotate(-288deg);
+    }
+  </style>
 </head>
+
 <body>
-    <h1>5 คุ้ม 5 อย่าง ซื้อ-ไม่ซื้อ?</h1>
-    <div class="gallery">
-      <img src="./images/house.png" />
-      <img src="./images/filter.png /">
-      <img src="./images/bike.png" />
-      <img src="./images/runningshoe.png" />
-      <img src="./images/books.jpg" />
-    </div>
+  <h1 style="color: red;">5 คุ้ม 5 อย่าง ซื้อ-ไม่ซื้อ? &hearts;</h1>
+  <div class="circle">
+    <img src="./images/house.png" class="img img1" alt="a house image" />
+    <img src="./images/filter.png" class="img img2" alt="dringking water filter image" />
+    <img src="./images/bike.png" class="img img3" alt="a bicycle image" />
+    <img src="./images/runningshoe.png" class="img img4" alt="a running shoe image" />
+    <img src="./images/books.jpg" class="img img5" alt="books image" />
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        // Remove expansion from any other image
+        images.forEach(i => {
+          if (i !== img) i.classList.remove('expanded');
+        });
+
+        // Toggle this image
+        img.classList.toggle('expanded');
+      });
+    });
+  </script>
 </body>
+
 </html>
