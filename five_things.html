@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ห้าคุ้ม</title>
+    <style>
+        .gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, 180px);
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.big {
+  grid-row: 1 / span 2;
+}
+    </style>
+</head>
+<body>
+    <h1>5 คุ้ม 5 อย่าง ซื้อ-ไม่ซื้อ?</h1>
+    <div class="gallery">
+      <img src="./images/house.png" />
+      <img src="./images/filter.png /">
+      <img src="./images/bike.png" />
+      <img src="./images/runningshoe.png" />
+      <img src="./images/books.jpg" />
+    </div>
+</body>
+</html>

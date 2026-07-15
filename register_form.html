@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+</head>
+
+<body>
+    <h1>ลงทะเบียนสมัครสมาชิก</h1>
+    <form id="apply-member" action="" method="">
+        <p>
+        <h2>ข้อมูลส่วนตัว</h2>
+        </p>
+        <div>
+            <label for="name">ชื่อ-นามสกุล(your name):</label>
+            <input name="name" required type="text" placeholder="ชื่อ-นามสกุล" />
+        </div>
+        <div>
+            <label for="password">รหัสผ่าน(password):</label>
+            <input name="password" type="password" />
+        </div>
+        <div>
+            <label for="email">อีเมล(email):</label>
+            <input name="email" type="email" required />
+        </div>
+
+        <p>
+        <h2>เลือกแพ็คเกจ</h2>
+        </p>
+        <div>
+            <input id="free" name="package" type="radio" value="free" />
+            <label for="free">Free Plan</label>
+            <input id="premium" name="package" type="radio" value="premium" />
+            <label for="premium">Primium Plan</label>
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>
