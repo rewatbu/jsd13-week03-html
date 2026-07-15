@@ -10,32 +10,41 @@
 <body>
     <h1>ลงทะเบียนสมัครสมาชิก</h1>
     <form id="apply-member" action="" method="">
-        <p>
-        <h2>ข้อมูลส่วนตัว</h2>
-        </p>
-        <div>
+        <h3>ข้อมูลส่วนตัว</h3>
+        <div class="userdata">
             <label for="name">ชื่อ-นามสกุล(your name):</label>
             <input name="name" required type="text" placeholder="ชื่อ-นามสกุล" />
         </div>
-        <div>
+        <div class="userdata">
             <label for="password">รหัสผ่าน(password):</label>
             <input name="password" type="password" />
         </div>
-        <div>
+        <div class="userdata">
             <label for="email">อีเมล(email):</label>
             <input name="email" type="email" required />
         </div>
 
-        <p>
-        <h2>เลือกแพ็คเกจ</h2>
-        </p>
-        <div>
+        
+        <div class="plans">
+            <h3>เลือกแพ็คเกจ</h3>
             <input id="free" name="package" type="radio" value="free" />
-            <label for="free">Free Plan</label>
+            <label for="free">Free Plan (0 บาท/เดือน)</label><br />
             <input id="premium" name="package" type="radio" value="premium" />
-            <label for="premium">Primium Plan</label>
+            <label for="premium">Primium Plan (49 บาท/เดือน)</label>
 
         </div>
+
+        <div class="interest">
+            <h3>เรื่องที่สนใจ</h3>
+            <input type="checkbox" name="movie" id="movie" />
+            <label for="movie">ดูหนัง</label>
+            <input type="checkbox" name="music" id="music" />
+            <label for="music">ฟังเพลง</label>
+            <input type="checkbox" name="game" id="game" />
+            <label for="game">เล่นเกม</label>
+        </div>
+
+        <button type="submit">ยืนยันการสมัคร</button>
 
     </form>
 
